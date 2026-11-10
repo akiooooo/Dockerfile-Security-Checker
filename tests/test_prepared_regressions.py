@@ -309,3 +309,12 @@ class PreparedRegressionTests(unittest.TestCase):
             apply_fix(self.path, "from app:1\n")
         self.assertEqual(self.path.read_text(encoding="utf-8"), "from app:2\n")
 
+    def test_081(self):
+        source = "from app:1\n"
+        self.path.write_bytes(source.encode("utf-8"))
+        backup = self.path.with_name("Dockerfile.bak")
+        backup.write_text("valuable", encoding="utf-8")
+        with self.assertRaises(FileExistsError):
+            apply_fix(self.path, source)
+        self.assertEqual(backup.read_text(encoding="utf-8"), "valuable")
+
