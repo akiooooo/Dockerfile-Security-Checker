@@ -35,3 +35,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_001(self):
         self.assertIn('DF001', self.codes('FROM docker.io/library/ubuntu\n'))
 
+    def test_002(self):
+        self.assertIn('DF002', self.codes('FROM ubuntu:LATEST\n'))
+
