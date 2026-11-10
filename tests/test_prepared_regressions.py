@@ -272,3 +272,6 @@ class PreparedRegressionTests(unittest.TestCase):
         updated, lines = uppercase_keywords("from app:1")
         self.assertEqual((updated, lines), ("FROM app:1", [1]))
 
+    def test_073(self):
+        self.assertEqual(uppercase_keywords("  from app:1\n")[0], "  FROM app:1\n")
+
