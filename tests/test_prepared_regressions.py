@@ -182,3 +182,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_050(self):
         self.assertNotIn('DF024', self.codes('FROM app:1\nLABEL description="MAINTAINER moved to OCI label"\n'))
 
+    def test_051(self):
+        self.assertNotIn('DF025', self.codes('FROM app:1\nRUN echo "from alpine"\n'))
+
