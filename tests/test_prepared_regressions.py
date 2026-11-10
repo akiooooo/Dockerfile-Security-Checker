@@ -155,3 +155,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_041(self):
         self.assertNotIn('DF015', self.codes('FROM app:1\nRUN apk add curl && rm -rf /var/cache/apk/*\n'))
 
+    def test_042(self):
+        self.assertNotIn('DF016', self.codes('FROM app:1\nENV PIP_NO_CACHE_DIR=true\nRUN pip3 install flask\n'))
+
