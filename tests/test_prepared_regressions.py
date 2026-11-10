@@ -393,3 +393,7 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertEqual(json.loads(output)["files"][0]["findings"][0]["rule"], "PARSE")
 
+    def test_099(self):
+        report = analyze("FROM app:latest\nRUN chmod 777 /app\nUSER root\n")
+        self.assertEqual([(f.line, f.rule) for f in report.findings], sorted((f.line, f.rule) for f in report.findings))
+
