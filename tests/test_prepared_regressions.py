@@ -83,3 +83,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_017(self):
         self.assertIn('DF017', self.codes('FROM node:22\nRUN npm install --omit=dev\n'))
 
+    def test_018(self):
+        self.assertIn('DF018', self.codes('FROM app:1\nENTRYPOINT exec /app/server\n'))
+
