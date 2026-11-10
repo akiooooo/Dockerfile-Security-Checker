@@ -268,3 +268,7 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertTrue(document.instructions[1].heredoc)
         self.assertEqual(document.instructions[1].end_line, 4)
 
+    def test_072(self):
+        updated, lines = uppercase_keywords("from app:1")
+        self.assertEqual((updated, lines), ("FROM app:1", [1]))
+
