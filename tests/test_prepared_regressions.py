@@ -303,3 +303,9 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertEqual(apply_fix(self.path, source), [1, 2])
         self.assertEqual(self.path.with_name("Dockerfile.bak").read_bytes(), source.encode())
 
+    def test_080(self):
+        self.path.write_text("from app:2\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "изменился"):
+            apply_fix(self.path, "from app:1\n")
+        self.assertEqual(self.path.read_text(encoding="utf-8"), "from app:2\n")
+
