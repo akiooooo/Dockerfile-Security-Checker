@@ -104,3 +104,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_024(self):
         self.assertIn('DF024', self.codes('FROM app:1\nMAINTAINER Developer <dev@example.test>\n'))
 
+    def test_025(self):
+        self.assertIn('DF025', self.codes('FROM app:1\ncOpY app.py /app/\n'))
+
