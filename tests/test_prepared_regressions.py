@@ -388,3 +388,8 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertEqual(json.loads(output)["files"][0]["path"], str(self.path))
 
+    def test_098(self):
+        code, output, _ = self.cli("FROM app:1\nCMD [broken\n", "--format", "json", "--fail-on", "none")
+        self.assertEqual(code, 1)
+        self.assertEqual(json.loads(output)["files"][0]["findings"][0]["rule"], "PARSE")
+
