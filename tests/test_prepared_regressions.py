@@ -369,3 +369,8 @@ class PreparedRegressionTests(unittest.TestCase):
         rules = sarif_report([report, report])["runs"][0]["tool"]["driver"]["rules"]
         self.assertEqual(len(rules), len({r["id"] for r in rules}))
 
+    def test_093(self):
+        output = text_report([analyze("FROM app:1\nUSER root\n")])
+        self.assertIn("DF006", output)
+        self.assertIn("CMD/ENTRYPOINT", output)
+
