@@ -101,3 +101,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_023(self):
         self.assertIn('DF023', self.codes('FROM app:1\nCOPY ["./*", "/app/"]\n'))
 
+    def test_024(self):
+        self.assertIn('DF024', self.codes('FROM app:1\nMAINTAINER Developer <dev@example.test>\n'))
+
