@@ -110,3 +110,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_026(self):
         self.assertIn('DF026', self.codes('FROM app:1\nONBUILD COPY . /child\n'))
 
+    def test_027(self):
+        self.assertNotIn('DF001', self.codes('FROM localhost:5000/team/backend:2\n'))
+
