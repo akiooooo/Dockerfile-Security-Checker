@@ -86,3 +86,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_018(self):
         self.assertIn('DF018', self.codes('FROM app:1\nENTRYPOINT exec /app/server\n'))
 
+    def test_019(self):
+        self.assertIn('DF019', self.codes('FROM app:1\nWORKDIR ./backend\n'))
+
