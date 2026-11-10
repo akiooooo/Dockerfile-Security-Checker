@@ -249,3 +249,8 @@ class PreparedRegressionTests(unittest.TestCase):
         document = parse("# escape=`\nFROM app:1\nRUN echo one `\n && echo two\n")
         self.assertEqual(document.instructions[1].end_line, 4)
 
+    def test_068(self):
+        document = parse("FROM app:1 AS base\nUSER 1000\nFROM base AS runtime\n")
+        self.assertIs(document.stages[1].parent, document.stages[0])
+        self.assertEqual(document.stages[1].effective("USER").value, "1000")
+
