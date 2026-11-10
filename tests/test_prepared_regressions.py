@@ -287,3 +287,7 @@ class PreparedRegressionTests(unittest.TestCase):
         source = "# dockercheck: ignore=DF025 reason=style convention\nfrom app:1\n"
         self.assertEqual(uppercase_keywords(source), (source, []))
 
+    def test_077(self):
+        source = "# dockercheck: ignore=DF025 reason=style convention\nfrom app:1\nrun true\n"
+        self.assertEqual(uppercase_keywords(source)[1], [3])
+
