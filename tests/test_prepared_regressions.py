@@ -196,3 +196,7 @@ class PreparedRegressionTests(unittest.TestCase):
         with self.assertRaises(ParseError):
             parse('# only comment\n')
 
+    def test_055(self):
+        with self.assertRaises(ParseError):
+            parse('RUN echo hello\n')
+
