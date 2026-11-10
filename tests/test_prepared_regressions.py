@@ -331,3 +331,7 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_084(self):
         self.assertEqual(masked_preview("FROM app:1\r\nRUN true\r\n").count("\r\n"), 2)
 
+    def test_085(self):
+        updated, _ = uppercase_keywords("from app:1\nrun true\n")
+        self.assertEqual(uppercase_keywords(updated), (updated, []))
+
