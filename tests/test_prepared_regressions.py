@@ -291,3 +291,9 @@ class PreparedRegressionTests(unittest.TestCase):
         source = "# dockercheck: ignore=DF025 reason=style convention\nfrom app:1\nrun true\n"
         self.assertEqual(uppercase_keywords(source)[1], [3])
 
+    def test_078(self):
+        source = "FROM app:1\n"
+        self.path.write_bytes(source.encode("utf-8"))
+        self.assertEqual(apply_fix(self.path, source), [])
+        self.assertFalse(self.path.with_name("Dockerfile.bak").exists())
+
