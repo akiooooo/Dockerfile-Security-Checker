@@ -134,3 +134,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_034(self):
         self.assertNotIn('DF008', self.codes('FROM app:1\nCOPY config/.env.sample /app/\n'))
 
+    def test_035(self):
+        self.assertNotIn('DF009', self.codes('FROM app:1\nADD archive.tar.gz /app/\n'))
+
