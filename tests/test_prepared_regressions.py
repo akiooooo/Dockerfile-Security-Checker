@@ -113,3 +113,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_027(self):
         self.assertNotIn('DF001', self.codes('FROM localhost:5000/team/backend:2\n'))
 
+    def test_028(self):
+        self.assertNotIn('DF002', self.codes('FROM team/latest:2\n'))
+
