@@ -143,3 +143,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_037(self):
         self.assertNotIn('DF011', self.codes('FROM app:1\nRUN wget --ca-certificate=/certs/ca.pem https://example.test\n'))
 
+    def test_038(self):
+        self.assertNotIn('DF012', self.codes('FROM app:1\nRUN --mount=type=cache,target=/var/lib/apt apt-get update\n'))
+
