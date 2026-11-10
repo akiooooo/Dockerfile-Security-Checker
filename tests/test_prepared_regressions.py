@@ -232,3 +232,7 @@ class PreparedRegressionTests(unittest.TestCase):
         with self.assertRaises(ParseError):
             parse('FROM app:1\nRUN <<END\necho hello\n')
 
+    def test_064(self):
+        with self.assertRaises(ParseError):
+            parse('FROM app:1\n# dockercheck: ignore=DF003 reason=\nRUN true\n')
+
