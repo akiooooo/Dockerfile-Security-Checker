@@ -149,3 +149,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_039(self):
         self.assertNotIn('DF013', self.codes('FROM app:1\nRUN apt-get --yes install --no-install-recommends curl\n'))
 
+    def test_040(self):
+        self.assertNotIn('DF014', self.codes('FROM app:1\nRUN --mount=type=cache,target=/var/lib/apt/lists apt-get install curl\n'))
+
