@@ -208,3 +208,7 @@ class PreparedRegressionTests(unittest.TestCase):
         with self.assertRaises(ParseError):
             parse('FROM app:1 broken alias\n')
 
+    def test_058(self):
+        with self.assertRaises(ParseError):
+            parse('FROM app:1 AS build\nFROM app:1 AS BUILD\n')
+
