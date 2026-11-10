@@ -71,3 +71,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_013(self):
         self.assertIn('DF013', self.codes('FROM app:1\nRUN apt-get install --yes ca-certificates\n'))
 
+    def test_014(self):
+        self.assertIn('DF014', self.codes('FROM app:1\nRUN apt-get install --no-install-recommends -y curl && echo done\n'))
+
