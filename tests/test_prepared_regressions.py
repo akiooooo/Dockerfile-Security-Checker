@@ -335,3 +335,9 @@ class PreparedRegressionTests(unittest.TestCase):
         updated, _ = uppercase_keywords("from app:1\nrun true\n")
         self.assertEqual(uppercase_keywords(updated), (updated, []))
 
+    def test_086(self):
+        source = "from app:1\nrun touch NEVER_EXECUTE_THIS\n"
+        self.path.write_bytes(source.encode("utf-8"))
+        apply_fix(self.path, source)
+        self.assertFalse((self.context/"NEVER_EXECUTE_THIS").exists())
+
