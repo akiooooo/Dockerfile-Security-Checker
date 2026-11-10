@@ -98,3 +98,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_022(self):
         self.assertIn('DF022', self.codes('FROM app:1\nHEALTHCHECK NONE\n'))
 
+    def test_023(self):
+        self.assertIn('DF023', self.codes('FROM app:1\nCOPY ["./*", "/app/"]\n'))
+
