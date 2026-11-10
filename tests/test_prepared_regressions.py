@@ -161,3 +161,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_043(self):
         self.assertNotIn('DF017', self.codes('FROM node:22\nRUN npm ci --omit=dev\n'))
 
+    def test_044(self):
+        self.assertNotIn('DF018', self.codes('FROM app:1\nCMD ["/app/server", "--port", "8080"]\n'))
+
