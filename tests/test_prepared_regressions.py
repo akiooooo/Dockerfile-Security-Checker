@@ -92,3 +92,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_020(self):
         self.assertIn('DF020', self.codes('FROM app:1\nRUN /bin/chmod -R 777 /srv/uploads\n'))
 
+    def test_021(self):
+        self.assertIn('DF021', self.codes('FROM app:1\nRUN sudo -u app echo hello\n'))
+
