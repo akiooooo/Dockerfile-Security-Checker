@@ -77,3 +77,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_015(self):
         self.assertIn('DF015', self.codes('FROM app:1\nRUN apk add --update ca-certificates\n'))
 
+    def test_016(self):
+        self.assertIn('DF016', self.codes('FROM app:1\nRUN python3 -m pip install flask\n'))
+
