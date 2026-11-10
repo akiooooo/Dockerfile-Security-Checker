@@ -179,3 +179,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_049(self):
         self.assertNotIn('DF023', self.codes('FROM app:1\nCOPY --from=builder /dist /app\n'))
 
+    def test_050(self):
+        self.assertNotIn('DF024', self.codes('FROM app:1\nLABEL description="MAINTAINER moved to OCI label"\n'))
+
