@@ -193,3 +193,7 @@ python scripts/package.py
 Схема доступна в [SVG](docs/algorithm.svg) и [Mermaid](docs/algorithm.mmd). Рекомендации опираются на [официальную документацию Docker](https://docs.docker.com/build/building/best-practices/), [Dockerfile reference](https://docs.docker.com/reference/dockerfile/) и общую направленность [CIS Docker Benchmark](https://www.cisecurity.org/benchmark/docker). Версии, ограничения и подробные ссылки перечислены в [источниках](docs/sources.md).
 
 В учебном задании указано требование к коду, написанному без генерации ИИ. Этот проект подготовлен с помощью ИИ; перед сдачей следует согласовать такой формат с преподавателем и самостоятельно разобраться в реализации.
+
+## Подготовленные улучшения
+
+[Список 100 проверенных изменений и порядок публикации](docs/prepared-improvements.md). Большинство шагов добавляет регрессионные тесты; исправления публикуются с проверками по расписанию.

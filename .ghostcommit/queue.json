@@ -1,0 +1,909 @@
+{
+  "version": 1,
+  "branch": "prepared-improvements",
+  "baseline": "c263a1c9e4bbfad5ea36d679055c07208af8a421",
+  "entries": [
+    {
+      "number": 1,
+      "commit": "651256e5ddca862bff177c229c8c2519308333c3",
+      "title": "Проверка Dockerfile без версии базового образа",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "d33a43ea39822bd8aa63a39c0e6aa09f37bdee9790a283cf7e251200d3953b8c"
+    },
+    {
+      "number": 2,
+      "commit": "9e990757d3218727a2ca566be96db4653c624b67",
+      "title": "Тест тега LATEST в верхнем регистре",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "2ca7d4b5de5ee2f757cc149fbc525f593199fd821c167b04e4297b52b990e6e8"
+    },
+    {
+      "number": 3,
+      "commit": "2e6562cd111563d7ca014a26e36119076d20cfa5",
+      "title": "Тест образа без digest из своего реестра",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "ebb6a741f1ae37e4b423e0008278378e1942c281a838b14fd516964c6d500344"
+    },
+    {
+      "number": 4,
+      "commit": "f64f6dd41747bca27cd0dc306439ff7c0c356185",
+      "title": "Неизвестная переменная в FROM",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "73420f8864cabc4c9e53f11f6a9e657e789e0feadc7532406cb3ed40d8d0cb63"
+    },
+    {
+      "number": 5,
+      "commit": "45d18412476fd67e4e8c690f6dcd685222099004",
+      "title": "Проверка USER в образе scratch",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "62bbbb2aada02edfd2ee3064e6c3946f85104990398c1a802fb24e7157930929"
+    },
+    {
+      "number": 6,
+      "commit": "91592b0667603aa83d5757a6ebf6022e91992671",
+      "title": "Нулевой UID с ведущими нулями",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "2325f7fac3e3358edb38f786513ecdc4b03a4b6220dfbcc1048436a2810c91d8"
+    },
+    {
+      "number": 7,
+      "commit": "407ca9ded8b38e020b7bf9692b39f241edc2a0da",
+      "title": "Секретное имя переменной окружения",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f60f968f909382ce3627733b2bd5485b1db15ca2d8a1158896ac1448b4933ef3"
+    },
+    {
+      "number": 8,
+      "commit": "9dfb1a3b1aecbb025e9913cdc88763f8c0e0c303",
+      "title": "Копирование закрытого ключа Ed25519",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c513e7b0a493d656ad37015543280e42acf3e72dd01542cd5c2807a2a21a28ac"
+    },
+    {
+      "number": 9,
+      "commit": "5faad393b84bb0509f58eaea25afe0abbd68c7b8",
+      "title": "Загрузка Git-репозитория через ADD",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9cfe6106c75d87b810f1c5678d0f21fd18e59349a3683aa0b041d2202ffac901"
+    },
+    {
+      "number": 10,
+      "commit": "5d1ecd1f168cf21240a409ce2bbdd272a7858760",
+      "title": "Передача загрузки wget в bash",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "e885e3d1e640c1fc1def6d248c19c85786a7eeea1ea77263873690c1a3d533f9"
+    },
+    {
+      "number": 11,
+      "commit": "63ba6297c6ce2c2531154c7c8c3f9d7410e4e65d",
+      "title": "Проверка коротких флагов curl",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "fd3a0c0b5d8e4c7c949d0274619195f3ca42532520cf2eee4a207c0b544a3ca0"
+    },
+    {
+      "number": 12,
+      "commit": "de2e185f702c940c68d5ffcea7fab8ffdb27746a",
+      "title": "apt-get update во вложенной оболочке",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "35d391a98a86621fc62db3e1049ba83195a4d5cf89e94604813ab37a9fbc6433"
+    },
+    {
+      "number": 13,
+      "commit": "3472114aa75dcc309e2baeca174c8a5e3f8b127b",
+      "title": "Установка рекомендуемых пакетов apt",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4ed78177ab66bc59d7db94b26beb7e6f904889dd6e7b6ae0d1af07ae03a4a1fb"
+    },
+    {
+      "number": 14,
+      "commit": "38522d85a52dec52edc660d186825e886fe9acec",
+      "title": "Списки apt после установки пакетов",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "e9cae453323d7ac3c90f613dd66fde9b56037abe9eaf14f74e083e2797af0d4d"
+    },
+    {
+      "number": 15,
+      "commit": "5a1604aed3be5663de6018615b527443120728fc",
+      "title": "Кеш apk при обновлении индекса",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "e309c1dcf7f7e0141aaf2ec09be5085b6853ecf2d90dbf01d74b8fe33623d82d"
+    },
+    {
+      "number": 16,
+      "commit": "6d793638d5fa249a3d8de2130fa02bb13c5aa235",
+      "title": "Кеш установки через python3 -m pip",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "b7ec0f6ca53299902a638f6a1ed895f4a573efb846a2ba4f76b554268604e0c4"
+    },
+    {
+      "number": 17,
+      "commit": "0155b545877c8b5f4b6d670cf752d965d4e9a60d",
+      "title": "npm install без dev-зависимостей",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "3a2e2afc809d0409b440bc76411e33aa853e5eba00fdec1a3e567ad1daca285e"
+    },
+    {
+      "number": 18,
+      "commit": "fa37b266425c10859c3bdf0527bd16647699acdc",
+      "title": "Shell ENTRYPOINT с командой exec",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0c2ae11c0f731e581af34eb85275a5440f3e258ca8dd6c3b14d7b94770c6fd7e"
+    },
+    {
+      "number": 19,
+      "commit": "d5e5a1ed8ea5a050c89ebb060f1433b3d844c5d9",
+      "title": "Относительный путь WORKDIR",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "508da6da54ffceb7db470748879a1a9936703defd491ef5aa22937406f9e1779"
+    },
+    {
+      "number": 20,
+      "commit": "4e0230ebb9b2b35c943dc2a0385bea200bb3ca0c",
+      "title": "Рекурсивные права 777",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "e7ef9f5f257bf4522fc553a483257bb160c1959c9647f7eca559df7b4ab5dfe7"
+    },
+    {
+      "number": 21,
+      "commit": "e1b0e2cd79a2de6097ea4e51ea378c9b7eeb7be7",
+      "title": "sudo с выбором пользователя",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "e57c7ac11ae9b4b411cb46d35683a9edca667aab031d8f94dcc99c598aee358c"
+    },
+    {
+      "number": 22,
+      "commit": "b060c144e9e0e43e62467f79d1f89223bb914e80",
+      "title": "Явное отключение HEALTHCHECK",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9c3b7ebdf9c1316348fc567692a9a027d595408b45e1f96876c68485949e1070"
+    },
+    {
+      "number": 23,
+      "commit": "e2eb5a93776c3728dfeecacd6931e28e95998c66",
+      "title": "Широкий COPY в JSON-формате",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "b1aed6b970d897775c3dfa93e434e7de1a6fb35fbaacfc1ab76e1fd947e43b67"
+    },
+    {
+      "number": 24,
+      "commit": "e25d8d820a2e345125751867a1df432fc142571d",
+      "title": "MAINTAINER с адресом автора",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "16d5f49d146592ecbf2086ef243c236e1d2a648c83ed8064fa8f3470dbf0e79b"
+    },
+    {
+      "number": 25,
+      "commit": "a72e4921be4662d4b30a6a127a718a49acd6eca2",
+      "title": "Смешанный регистр COPY",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9e53fad4d85bf0231581659bf9c836302a6a13f71d2093a2d9672b2bdb6d5aaf"
+    },
+    {
+      "number": 26,
+      "commit": "979c3fde39573f61fec4c8be9fdd645775467778",
+      "title": "Копирование через ONBUILD",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c9f272258c78250fb2f691c1f1039b039496392ca6b24ad428deed9095adc1ec"
+    },
+    {
+      "number": 27,
+      "commit": "a8d7082fa2196f605ad750d2c4d7e1756977eb3a",
+      "title": "Порт реестра в имени образа",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "71e2d024d75edc6f70aa608c6c8a3ec9219b53c7491c2fdf0daeebcbbd557e65"
+    },
+    {
+      "number": 28,
+      "commit": "ccc0d8ddd234583149461fa27ea81d98dc4f09c3",
+      "title": "Образ с именем latest и обычным тегом",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f5aadc11a4901b92f08153f6009c1b7cdcd7f34b19469cd641968fa6ab065d8f"
+    },
+    {
+      "number": 29,
+      "commit": "cc246068e340a8d4480ce8c86687445aa3989d8e",
+      "title": "Тег и digest в одном FROM",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f3157be08b753540d6627ee949f296204796f6849233597cd0ff6d3e56a7e9e6"
+    },
+    {
+      "number": 30,
+      "commit": "c8c6e5256626c27135f39d0dbb24f9f7a3e82be9",
+      "title": "Значение ARG по умолчанию в FROM",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "91c65b5c8ffb79b9137dcc68e96aa6f7eea13466719e16a3ab9bbf81126a6728"
+    },
+    {
+      "number": 31,
+      "commit": "88ed757dfb8db85b84890ae8c2476eb1c3978ca4",
+      "title": "Непривилегированный числовой USER",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "6167c329167193ed1ac77bb12f828269cca328d30ff3558cf987dc11e3c9b33a"
+    },
+    {
+      "number": 32,
+      "commit": "3765b22b666ea8f1ffa4f662b3b9f9c53733f0ab",
+      "title": "Последнее переключение пользователя в стадии",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "2e12c6d22160a4e7436bbc07519a63b3274283e34c92afae98f8db2766f3307d"
+    },
+    {
+      "number": 33,
+      "commit": "11932654caaad9abea9c054c8b1b2d10ac53b887",
+      "title": "Исправлена проверка ENV со старым синтаксисом",
+      "files": [
+        "dockercheck/rules.py",
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4c1d42be52d7e81e9d05562c956c035bce5f23bfaf410f6ef080bddee8686c30"
+    },
+    {
+      "number": 34,
+      "commit": "50e09c6fd76cea05d935715af8038b161de10b1f",
+      "title": "Шаблон env.sample при копировании",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9531e5e1cb21b586469905802f4f8abaf71da2344fa2aa58ad952990c63c7029"
+    },
+    {
+      "number": 35,
+      "commit": "fbb565c0b41919c1c95bf7892ae5b37c6488781a",
+      "title": "Локальная распаковка через ADD",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4885a53daaff6e3f27e9ee0e2509fd03086930fed4330f88297288ac8c97d375"
+    },
+    {
+      "number": 36,
+      "commit": "6e80d92369b51aef3a424ed53a1e2f3f01faf6f2",
+      "title": "Отдельная загрузка файла с проверкой хеша",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f0839ff73f931676afdbbc5b816afd32386d1cef3be029ff05cfba0cc48ff038"
+    },
+    {
+      "number": 37,
+      "commit": "f7b7398913dd420291560b13c33891c43b254f61",
+      "title": "Загрузка с собственным CA-сертификатом",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0607da0f3118842866eb011e0a4098ed8a6fd360469a887780bb9cc584bfd22c"
+    },
+    {
+      "number": 38,
+      "commit": "b6195f7e72a6edf14040baee0b58da61b100d198",
+      "title": "Cache mount для apt-get update",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "28c8a075bea3998f4bdda036f47f311f1bf190dffffc09b36b5556aa13522493"
+    },
+    {
+      "number": 39,
+      "commit": "7c5a9731416aef2a93303e5a6af8910513dbc358",
+      "title": "Флаг no-install-recommends при установке",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "245418dd2ff14a63db495bc3c57545be23b86fcb903bdbce60f63085fdeb0e3c"
+    },
+    {
+      "number": 40,
+      "commit": "cdc6d32c60fcb9d86e5c9e685a5a12bc4ff78325",
+      "title": "Cache mount для списков apt",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9cc2121bc40243e96151347abc2d4a1b8f98edba7159015d9f58b36b95e3d31e"
+    },
+    {
+      "number": 41,
+      "commit": "7b7658cd96bbc24ee02c0976929f4fdfb2da21be",
+      "title": "Очистка кеша apk в том же слое",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "943f88662e34728322b1cb1e9b15447dc1ebeb6c3b694fc4b307d485d436422d"
+    },
+    {
+      "number": 42,
+      "commit": "e144fe93c146e567f988bf78bb607ec30a36e928",
+      "title": "Отключение кеша pip через ENV",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "8655c5634a4f2b1dfe4cd5413777b30b81a78243d10c7afd3b40b91f83fb5fe2"
+    },
+    {
+      "number": 43,
+      "commit": "0d2a9bc13ad033ed85263d0a270c2bfbd05a2c43",
+      "title": "Установка зависимостей через npm ci",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "1fe2d9af3c0de9b4e1dbb77f7e4a37b18f72447751d8b571eae8396755333b3b"
+    },
+    {
+      "number": 44,
+      "commit": "388777b162892e227f3b298682d40e193ec46da8",
+      "title": "Exec-форма CMD с аргументами",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "d4aa30ce5a3931e1774953175fdcea38fe1e378da6c15e89296909eeb83bfa67"
+    },
+    {
+      "number": 45,
+      "commit": "a35a793fcb3bbcfba01809cf850e016d5cc187ed",
+      "title": "Абсолютный WORKDIR в Windows",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f8b36620e3ba0fd2f35942c6fe51867070beabc8698e46149d5da041653422c9"
+    },
+    {
+      "number": 46,
+      "commit": "e187ca54fff2cd09ea85c60f3f91fce8bc06a2b1",
+      "title": "Права 0755 для исполняемого файла",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "dce9c208bdfeb8b686f68024abad1e7688edd4154cac983d755c09f09e1a335b"
+    },
+    {
+      "number": 47,
+      "commit": "47573a49daf090318b10223b08a105e09f417b18",
+      "title": "Слово sudo в тексте команды echo",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "cacdd00f1b55927ed55931bed1cd0b1c8967dd7b42b05ae533838817c45bfe80"
+    },
+    {
+      "number": 48,
+      "commit": "812b38b0525daaac0e4d7d503f44362ee9580bc9",
+      "title": "Exec-форма HEALTHCHECK",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9e1dcdec19ad6258337729bcb93c7ef473419f596fbd7f4733bbbf503b822ad1"
+    },
+    {
+      "number": 49,
+      "commit": "a0f45b19147f345c506a836a672039d9e6272c2a",
+      "title": "COPY из другой стадии без dockerignore",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "276ff1c6ef4a5a310d752b9aba5c5efd0f7d841306ae8376673b5cfe2ec5e3be"
+    },
+    {
+      "number": 50,
+      "commit": "bdc66ca5226784eca3796d504873ea4257b236ff",
+      "title": "Слово MAINTAINER в метаданных",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f8e036c4ed95e2e80a07a5292738cd844e538608186342afb2c3abfbff125e67"
+    },
+    {
+      "number": 51,
+      "commit": "6c519b39d1e29af2e0b5def022adcf4855de6798",
+      "title": "Строчные инструкции внутри аргумента RUN",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4b21db8b66034789354953464fde543f70874f560d618635e83d16d175626a03"
+    },
+    {
+      "number": 52,
+      "commit": "22d9b7a025f6f761e7d46b13b42c375b451db9ed",
+      "title": "Слово ONBUILD в метаданных",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "1182b6eabf34de6c3ea9f687d4c829a326e77dc96e65570cda286e9ccc4c7d5e"
+    },
+    {
+      "number": 53,
+      "commit": "621852900e1d9b7d81f35a8fd2d999bf7aa4a5f7",
+      "title": "Пустой Dockerfile",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "b940e07aef12c2b1b355aea6e250a50a6aa96c4dc513eb1b43b57af9474b4a4b"
+    },
+    {
+      "number": 54,
+      "commit": "6c407a95d57c5259fa2d46db30cd78fb914cce02",
+      "title": "Dockerfile только с комментариями",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0a769d500536df434b44927aa4954a7b573c9cf2ddfa5db8e34166492bc88ca8"
+    },
+    {
+      "number": 55,
+      "commit": "8d492a6f64c8affb0ee96f8e76e6515a450350b6",
+      "title": "Инструкция RUN до FROM",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "b6debd46a07ccac2497facc9b09b9f9d7efcc8ef37e428bcbbb0c7c9c83f696f"
+    },
+    {
+      "number": 56,
+      "commit": "b7198429d4128c8661429bedf58a5e6fbe37b366",
+      "title": "FROM без имени образа",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "1b7358e1be3441f56673b5e07fdf6ac6c61954f9f3a0cc834a88e1b86b846efd"
+    },
+    {
+      "number": 57,
+      "commit": "f3e7411445027d1b13840166adea22aa9dc23914",
+      "title": "Ошибка объявления стадии",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0ba6a4bd2c06694527dcf5647d7d35f9d93ea81a2e42dc8adea0a1a1e94c6baa"
+    },
+    {
+      "number": 58,
+      "commit": "71fbab4523804f1912e71df1d59c5bbb7a9ce7b8",
+      "title": "Повтор имени стадии с другим регистром",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "8a575868ff57904688dc3dc2a5413c9dd6724e267ad916a1c7c8579fbecbe005"
+    },
+    {
+      "number": 59,
+      "commit": "f634966fc439e3a9db8a230e68d67f96f445252a",
+      "title": "Пустая JSON-команда",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "a87d1372ca9ab2b12b3702a66b01ed047a3f0541b4e1aeed2834461f5e7e78c6"
+    },
+    {
+      "number": 60,
+      "commit": "299f43e8831f2539dfd0f89e8b8bbaa48654479b",
+      "title": "Числовой аргумент в JSON-команде",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4bf28a1fded6f5f76efd1e26212469b52adcf61d0caa279a40edeaa81987a77d"
+    },
+    {
+      "number": 61,
+      "commit": "bc8416ec6463fcce9768c711f59f7f93a17962ea",
+      "title": "Незакрытый JSON-массив",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "66bd72277836fcae5c26cbd99661d1b0e99c4fcf6299afde02f622066831e990"
+    },
+    {
+      "number": 62,
+      "commit": "dc5f2ea53f6ce1be1ee8b6abb44d52462a5dcb8b",
+      "title": "Незавершённый перенос RUN",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "fd4c1542b86665e1d7ff3f8dc231c3c9efc1a23073bf9c7cdbb5cdc5c89a08dc"
+    },
+    {
+      "number": 63,
+      "commit": "e80e9df4d7e02eb8a70af7e0642dc0cadf860b3f",
+      "title": "Незавершённый heredoc",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "bc47964f44786c6477ab9bd62080eb7ffd0a13e9319187d9d40794ff6115df07"
+    },
+    {
+      "number": 64,
+      "commit": "8a91ab4c1e4e0bf15c0854b200ce9bce2999be27",
+      "title": "Пустая причина исключения правила",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "edce9032e06323919a9f302293490b92c35106701a3720540500b6709ca6322c"
+    },
+    {
+      "number": 65,
+      "commit": "909397dcc7884c9ac81ee00d012032ca996a2da9",
+      "title": "Номера строк многострочной инструкции",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "b95f69346b0d2343ad5b9e219a27158e74b1e189d4d2fec70bf434906b1d4f08"
+    },
+    {
+      "number": 66,
+      "commit": "a1183327d4e6f8b444fe1d98bfc5aecb2825e1ba",
+      "title": "Комментарий внутри переноса инструкции",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0ebcfbfe3626c8c6c6ef1bc8f344e3e7b1adbb9f0b24b96df4fb284347078643"
+    },
+    {
+      "number": 67,
+      "commit": "5ca1c29fad7693fcb49817d8cae6d11b9d9f66d7",
+      "title": "Директива escape в Windows Dockerfile",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "913a7f92daa371f2276efc289cf8e32efdacbf698729cff4fdcd95a9671c124b"
+    },
+    {
+      "number": 68,
+      "commit": "8aa800628ba645de7da857184c9d9204dff4336f",
+      "title": "Наследование пользователя от родительской стадии",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "8904920e943a42464dc3e277e09d8862dcc06f3dd1a9e0e03455e040369af8d8"
+    },
+    {
+      "number": 69,
+      "commit": "a765840d060605e19ffc332710eb7a74472cdc91",
+      "title": "Платформа перед именем образа",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "6b8e42127d53517622c55c2bec6f7717a49302de31022a1d41803b5015c16940"
+    },
+    {
+      "number": 70,
+      "commit": "e29f3054a78abbd27dbcd0a2696c21d633a44978",
+      "title": "Текст heredoc-маркера в echo",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "98fdf82f0cb21678c32361c3cc80c7ee9f979693890ce7dbbc24e357e3de8696"
+    },
+    {
+      "number": 71,
+      "commit": "3a48183a52f7a51763b37da8f8f95a83fa6f574e",
+      "title": "Табуляция в heredoc с дефисом",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "7420033fddbc1efc157e9afa4a81caabedebbc2212266cb6ca61be0fba277e6e"
+    },
+    {
+      "number": 72,
+      "commit": "4b4188724025ab4cf5f2a649dce8806070122d32",
+      "title": "Исправление файла без завершающего переноса",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "499f2677857bd381fa8ffb9eaf052fbdfcb8407ccc3c5f310557abaf8429d9e0"
+    },
+    {
+      "number": 73,
+      "commit": "8a57d7ae2ce26b2b36cbf6703c53700ae5a565d3",
+      "title": "Сохранение отступов при исправлении",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "cf31aace76c0da340b069ba19f26cddde9d9280013c5481a36ed4cb4f71a0e4a"
+    },
+    {
+      "number": 74,
+      "commit": "80cdfaf1285dbc62e0887d8f3fe983a5a89f89f7",
+      "title": "Сохранение JSON-аргументов команды",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "a5c44750252dbcc3ac01af4310da297f72bb507e9cc307ec51f179ea5f1bb4ee"
+    },
+    {
+      "number": 75,
+      "commit": "0301f7142f2516ca678244fe0f3427bfd06c4609",
+      "title": "Сохранение комментариев при исправлении",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "508653575f15174fbd49099d2d90f4ee603e8ff5b3eb837ab410ce1bf724b2eb"
+    },
+    {
+      "number": 76,
+      "commit": "ffcab543d74f02e05c9f084aea503f517bc6815b",
+      "title": "Локальное исключение проверки регистра",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9b679b4af96b42b60272b9c786eb1873cb8fd24d08752038a5cef29d74bcd399"
+    },
+    {
+      "number": 77,
+      "commit": "a6e30b0ae07757bd281f26908ed05718d929688c",
+      "title": "Область действия исключения правила",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c1e8f27150703f6ad88dcd4aff83a3148e1e754190ea817c0d7617ed4b187ce7"
+    },
+    {
+      "number": 78,
+      "commit": "4b792c7773d6b735e2fb982f29b828b068f5732e",
+      "title": "Исправленный файл без лишнего backup",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9ef3f48397062a296c404427a2a380ad61c82db8da900827a3573fbc43f5e119"
+    },
+    {
+      "number": 79,
+      "commit": "0373d6efdd33b2c9ab0470d3c8b52d6a85dabe61",
+      "title": "Сохранение исходных байтов в backup",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c3d036e24dbbb73ebf0c3d883138713c47e266637ca60e33f3cf8da90dfe6908"
+    },
+    {
+      "number": 80,
+      "commit": "0373a49a6bc1b400ab920c14555b45093ffd4a0f",
+      "title": "Защита от изменения файла во время проверки",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "fb571bb6be56638d40ba5bb93c11a88476ed5434aa1ecc4349a9a224608e950f"
+    },
+    {
+      "number": 81,
+      "commit": "2c8f2faacff657a3dcd12b70bf0a34a64ceef25c",
+      "title": "Защита существующей резервной копии",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c1dd91a594f720678ea8dff755d92bf4e6f277ad4e03b16f021bc8b009495e86"
+    },
+    {
+      "number": 82,
+      "commit": "1166c76636db8cb0bfe1e2a2d8ab5a186771bbbd",
+      "title": "Сохранение значений ENV при исправлении",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "df949e93893ada43089ff4221a5fd41802d8bab3db901c12ce1a172369aa35ee"
+    },
+    {
+      "number": 83,
+      "commit": "968597e4806a166689281c5d4d33c297f53b3bb2",
+      "title": "Скрытие heredoc в предпросмотре",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "a8076e5e975f6ec7b1ef39d452d32ab184355bb570087583f399218794587eb7"
+    },
+    {
+      "number": 84,
+      "commit": "7cd2f34035ad84a8d40f822dd7420558e37b6400",
+      "title": "Сохранение CRLF в предпросмотре",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "5ab31fdfaf19a30563a26c310251c64c84de5aea13c621223e3092d4b24c1d0e"
+    },
+    {
+      "number": 85,
+      "commit": "5ecc42d680b2e5550688a6258344a221494ca00d",
+      "title": "Повторное исправление без изменений",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f552b6ded23a8274ceebe4fb0ec2e0d91a9e73afaf8097792a248bd3296c2ada"
+    },
+    {
+      "number": 86,
+      "commit": "c3454b21bf42cff6d9becfeb2ee9a909089f17db",
+      "title": "Команды Dockerfile не выполняются при исправлении",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "2888a9560c222ef8750e4a515da8fa52f7ffdab218b4d7761b578ac9e6c980d9"
+    },
+    {
+      "number": 87,
+      "commit": "6fcc7203cab375f010f4daebc548717b4193e77e",
+      "title": "Пустая сводка JSON-отчёта",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "c3d8c8c58f850e7ba9541cfd57fcf387debedc1f14b437b36cf7177acc7e7ea2"
+    },
+    {
+      "number": 88,
+      "commit": "e12c3824c751535108fefeef491e0ba1771b8688",
+      "title": "Сводка ошибок нескольких файлов",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "0ef9e92c788548d0e621be5e75535d6fe50bbd8ba13555896e4d6008012dcd9d"
+    },
+    {
+      "number": 89,
+      "commit": "6b8f837a6eee38d65bd737487a89df65deddd69a",
+      "title": "Подавленные правила в JSON-отчёте",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "3b3fd5516fc32081e588a065f77c4bfad87c495f9138900f36574cbd415be1f1"
+    },
+    {
+      "number": 90,
+      "commit": "d024fc1bf13ed26b24bd66e268f178006f2a90fa",
+      "title": "Спецсимволы пути в SARIF",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "96f3afdc5bbddbf88cdb4de39c8f2ba03fd24ab278aa33829f3847cf75b525ed"
+    },
+    {
+      "number": 91,
+      "commit": "ce0539444802367c5fb0078b83d2d795d2af3e5a",
+      "title": "Уровень рекомендаций в SARIF",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "5edeef20468591fd812d8805abb89bcbff20fea36bfabe4c52ec398337a12b4b"
+    },
+    {
+      "number": 92,
+      "commit": "7590418f47d1a0c795d043d7231879e6e53a771d",
+      "title": "Правила без дубликатов в SARIF",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "149327d8a3ad609861555c1e54d6669e50fa8a46c63e7c1d055eaf3f50ac1e2c"
+    },
+    {
+      "number": 93,
+      "commit": "c9d7e547134684c00efd4a31baf2b641112bc420",
+      "title": "Рекомендации в текстовом отчёте",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "4de6fe5d176e790f77a18b29e7131c55e7689742f657efd8cdaaa23c6301e4aa"
+    },
+    {
+      "number": 94,
+      "commit": "2cd65908f27214db60450176a1e2ae576df9e6a2",
+      "title": "Порог error при наличии рекомендаций",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "657a0eee66ded0f4618fca3c8b4c3f554584f7487b09dfd95e12093ea4a0c872"
+    },
+    {
+      "number": 95,
+      "commit": "f1f042226d6eee21146e30f2ce897dc100a91616",
+      "title": "Порог warning при предупреждениях",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "f0124df8e8b689ceef45f0a34a45dc982131fdcd415149db2f21e07dc76dd466"
+    },
+    {
+      "number": 96,
+      "commit": "f1f0ef6a024381a5dfb1d26776f7353db099aa81",
+      "title": "Отключение порога ошибок через none",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "2adda7d39bc08c2bed793ced92d58af6f5f01851c07fd66cb5d06d5e6e5e093d"
+    },
+    {
+      "number": 97,
+      "commit": "4ea15aad2975269482e7cbacf00c8a700a2b96fc",
+      "title": "Путь файла в JSON-отчёте CLI",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "fc2b0b3e0a0e79b5f1ff8610426bca88a5ac85057667d079d0461057d879010f"
+    },
+    {
+      "number": 98,
+      "commit": "e78ca0f8cee2fcf1b73954764d51791672d208cc",
+      "title": "Ошибка синтаксиса при отключённом пороге",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "50f22e220a36d61b8d187594170614c14bdeee9b7da4d9b180b894f6f1133eb8"
+    },
+    {
+      "number": 99,
+      "commit": "685082250b97e5404d15ea1a7523cd6c473c5852",
+      "title": "Порядок замечаний по строкам",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "9f0776641d39174acb617675c415aaa760694dfd77abd1595cb574d2bb65137f"
+    },
+    {
+      "number": 100,
+      "commit": "9a68210b77704b1336a6f79ad56cc3a75f54ac4f",
+      "title": "Выбор runtime-стадии без учёта регистра",
+      "files": [
+        "tests/test_prepared_regressions.py"
+      ],
+      "sha256": "3ab7aff6758a9ce22935388ebe11433859aebc4e1bf34c351c796a13225b37da"
+    }
+  ],
+  "repository": "akiooooo/Dockerfile-Security-Checker"
+}
