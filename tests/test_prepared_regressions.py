@@ -170,3 +170,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_046(self):
         self.assertNotIn('DF020', self.codes('FROM app:1\nRUN chmod 0755 /app/server\n'))
 
+    def test_047(self):
+        self.assertNotIn('DF021', self.codes('FROM app:1\nRUN echo "documentation: sudo -u app"\n'))
+
