@@ -328,3 +328,6 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertNotIn("SUPER_SECRET", preview)
         self.assertEqual(len(preview.splitlines()), 4)
 
+    def test_084(self):
+        self.assertEqual(masked_preview("FROM app:1\r\nRUN true\r\n").count("\r\n"), 2)
+
