@@ -188,3 +188,7 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_052(self):
         self.assertNotIn('DF026', self.codes('FROM app:1\nLABEL description="ONBUILD disabled"\n'))
 
+    def test_053(self):
+        with self.assertRaises(ParseError):
+            parse('')
+
