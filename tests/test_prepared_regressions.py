@@ -245,3 +245,7 @@ class PreparedRegressionTests(unittest.TestCase):
         source = "FROM app:1\nRUN echo one " + "\\" + "\n# comment\n && echo two\n"
         self.assertIn("echo two", parse(source).instructions[1].value)
 
+    def test_067(self):
+        document = parse("# escape=`\nFROM app:1\nRUN echo one `\n && echo two\n")
+        self.assertEqual(document.instructions[1].end_line, 4)
+
