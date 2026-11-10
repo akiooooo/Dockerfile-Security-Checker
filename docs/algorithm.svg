@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="1160" viewBox="0 0 940 1160" role="img" aria-labelledby="title desc">
+  <title id="title">Алгоритм работы Dockercheck</title>
+  <desc id="desc">Чтение файлов, безопасное исправление, разбор, запуск правил, обработка исключений и формирование отчёта. Ошибка разбора не прерывает проверку остальных файлов.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#7990a2"/></marker>
+    <style>
+      text{font-family:Segoe UI,Arial,sans-serif;fill:#21364a;font-size:15px}
+      .node{fill:#fff;stroke:#c7d6e1;stroke-width:1.5}
+      .decision{fill:#eef7ff;stroke:#96b7d1;stroke-width:1.5}
+      .line{fill:none;stroke:#7990a2;stroke-width:1.6;marker-end:url(#arrow)}
+      .label{fill:#768da0;font-size:12px}
+    </style>
+  </defs>
+  <rect width="940" height="1160" fill="#f6f9fc"/>
+  <text x="40" y="40" style="font-size:25px;font-weight:700">Dockercheck</text>
+  <text x="40" y="65" class="label">Статический анализ Dockerfile · схема обработки</text>
+  <ellipse cx="585" cy="65" rx="110" ry="25" fill="#e1f2ec" stroke="#86bca9"/>
+  <text x="585" y="70" text-anchor="middle">Начало</text>
+  <path class="line" d="M585 90 V110"/>
+  <rect class="node" x="375" y="110" width="420" height="54" rx="9"/>
+  <text x="585" y="143" text-anchor="middle">Аргументы CLI и список файлов</text>
+  <path class="line" d="M585 164 V190"/>
+  <rect class="node" x="375" y="190" width="420" height="54" rx="9"/>
+  <text x="585" y="223" text-anchor="middle">Чтение следующего Dockerfile</text>
+  <path class="line" d="M585 244 V270"/>
+  <rect class="node" x="375" y="270" width="420" height="64" rx="9"/>
+  <text x="585" y="295" text-anchor="middle">Если выбран dry-run / --fix:</text>
+  <text x="585" y="318" text-anchor="middle" class="label">разбор; preview или backup и исправление регистра</text>
+  <path class="line" d="M585 334 V360"/>
+  <rect class="node" x="375" y="360" width="420" height="54" rx="9"/>
+  <text x="585" y="393" text-anchor="middle">Разбор инструкций и стадий</text>
+  <path class="line" d="M585 414 V435"/>
+  <polygon class="decision" points="585,435 755,478 585,521 415,478"/>
+  <text x="585" y="483" text-anchor="middle">Синтаксис понятен?</text>
+  <path class="line" d="M585 521 V550"/>
+  <text x="598" y="540" class="label">да</text>
+  <path class="line" d="M415 478 H165 V550"/>
+  <text x="295" y="466" class="label">нет</text>
+  <rect x="35" y="550" width="260" height="76" rx="9" fill="#fff1ed" stroke="#dfb9ac"/>
+  <text x="165" y="580" text-anchor="middle">Добавить PARSE</text>
+  <text x="165" y="603" text-anchor="middle" class="label">анализ этого файла остановлен</text>
+  <rect class="node" x="375" y="550" width="420" height="54" rx="9"/>
+  <text x="585" y="583" text-anchor="middle">Наследование и runtime-цель</text>
+  <path class="line" d="M585 604 V630"/>
+  <rect class="node" x="375" y="630" width="420" height="54" rx="9"/>
+  <text x="585" y="663" text-anchor="middle">Правила FROM / инструкции / runtime</text>
+  <path class="line" d="M585 684 V710"/>
+  <rect class="node" x="375" y="710" width="420" height="54" rx="9"/>
+  <text x="585" y="743" text-anchor="middle">Исключения и сортировка находок</text>
+  <path class="line" d="M585 764 V790"/>
+  <polygon class="decision" points="585,790 755,833 585,876 415,833"/>
+  <text x="585" y="838" text-anchor="middle">Есть ещё файлы?</text>
+  <path class="line" d="M165 626 V833 H415"/>
+  <path class="line" d="M755 833 H875 V217 H795"/>
+  <text x="829" y="819" class="label">да</text>
+  <path class="line" d="M585 876 V905"/>
+  <text x="598" y="895" class="label">нет</text>
+  <rect class="node" x="375" y="905" width="420" height="54" rx="9"/>
+  <text x="585" y="938" text-anchor="middle">Отчёт: текст / JSON / SARIF</text>
+  <path class="line" d="M585 959 V985"/>
+  <rect class="node" x="375" y="985" width="420" height="54" rx="9"/>
+  <text x="585" y="1018" text-anchor="middle">Код 0 / 1 по порогу; PARSE всегда 1</text>
+  <path class="line" d="M585 1039 V1065"/>
+  <ellipse cx="585" cy="1090" rx="110" ry="25" fill="#e1f2ec" stroke="#86bca9"/>
+  <text x="585" y="1095" text-anchor="middle">Конец</text>
+  <rect x="35" y="915" width="260" height="112" rx="9" fill="#fff9eb" stroke="#dccc9f"/>
+  <text x="165" y="945" text-anchor="middle">Техническая ошибка</text>
+  <text x="165" y="970" text-anchor="middle" class="label">Аргументы, чтение, запись</text>
+  <text x="165" y="990" text-anchor="middle" class="label">или неизвестный ID правила:</text>
+  <text x="165" y="1012" text-anchor="middle">сообщение и код 2</text>
+  <text x="40" y="1135" class="label">Ни одна проверка не исполняет команды из Dockerfile.</text>
+</svg>

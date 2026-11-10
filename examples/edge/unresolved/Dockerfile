@@ -1,0 +1,4 @@
+ARG BASE
+FROM ${BASE}
+USER 10001
+CMD ["true"]

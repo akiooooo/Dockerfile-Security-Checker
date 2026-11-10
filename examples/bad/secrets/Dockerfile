@@ -1,0 +1,7 @@
+FROM python:3.12-slim
+ARG API_TOKEN=EXAMPLE_NOT_A_REAL_SECRET
+ENV DB_PASSWORD=EXAMPLE_NOT_A_REAL_SECRET
+COPY .env /app/.env
+COPY .ssh /root/.ssh
+USER 10001
+CMD ["python", "-V"]

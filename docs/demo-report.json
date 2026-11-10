@@ -1,0 +1,108 @@
+{
+  "tool": "dockercheck",
+  "version": "1.0.0",
+  "files": [
+    {
+      "path": "examples\\bad\\root\\Dockerfile",
+      "findings": [
+        {
+          "rule": "DF002",
+          "severity": "warning",
+          "message": "Плавающий тег latest",
+          "recommendation": "Замените latest выбранной версией и настройте регулярное обновление.",
+          "line": 1,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF003",
+          "severity": "info",
+          "message": "Базовый образ без digest",
+          "recommendation": "При необходимости строгой воспроизводимости закрепите sha256 digest и обновляйте его автоматически.",
+          "line": 1,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF022",
+          "severity": "info",
+          "message": "Финальный образ без HEALTHCHECK",
+          "recommendation": "Определите HEALTHCHECK или проверку готовности/жизни на уровне оркестратора.",
+          "line": 1,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF019",
+          "severity": "warning",
+          "message": "Относительный WORKDIR",
+          "recommendation": "Укажите абсолютный WORKDIR, чтобы не зависеть от рабочего каталога базового образа.",
+          "line": 2,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF012",
+          "severity": "warning",
+          "message": "apt-get update отделён от install",
+          "recommendation": "Объедините update и install через && в одном RUN, чтобы избежать устаревшего кеша.",
+          "line": 3,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF013",
+          "severity": "warning",
+          "message": "Установка рекомендуемых пакетов apt",
+          "recommendation": "Добавьте --no-install-recommends, если рекомендуемые пакеты не нужны.",
+          "line": 4,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF014",
+          "severity": "warning",
+          "message": "Кеш списков apt остаётся в слое",
+          "recommendation": "В том же RUN после установки удалите /var/lib/apt/lists/* либо используйте cache mount.",
+          "line": 4,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF020",
+          "severity": "error",
+          "message": "Права на запись для всех пользователей",
+          "recommendation": "Назначьте владельца через COPY --chown и минимальные права для нужных файлов.",
+          "line": 5,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF006",
+          "severity": "error",
+          "message": "Финальный образ явно запускается от root",
+          "recommendation": "Создайте пользователя и переключитесь на него перед CMD/ENTRYPOINT.",
+          "line": 6,
+          "stage": "0",
+          "fixable": false
+        },
+        {
+          "rule": "DF018",
+          "severity": "warning",
+          "message": "Shell-форма запуска процесса",
+          "recommendation": "Предпочтите JSON exec-форму CMD/ENTRYPOINT, чтобы процесс корректно получал сигналы.",
+          "line": 7,
+          "stage": "0",
+          "fixable": false
+        }
+      ],
+      "stages": 1,
+      "suppressed": 0
+    }
+  ],
+  "summary": {
+    "error": 2,
+    "warning": 6,
+    "info": 2
+  }
+}

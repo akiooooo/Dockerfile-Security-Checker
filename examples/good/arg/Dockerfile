@@ -1,0 +1,4 @@
+ARG BASE=alpine:3.21
+FROM ${BASE}
+USER 10001
+CMD ["true"]

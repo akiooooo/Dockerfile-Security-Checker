@@ -1,0 +1,20 @@
+{
+  "good/python/Dockerfile": ["DF003"],
+  "good/node/Dockerfile": ["DF003", "DF022"],
+  "good/go/Dockerfile": ["DF003", "DF022"],
+  "good/inherited/Dockerfile": ["DF003"],
+  "good/apt/Dockerfile": ["DF003", "DF022"],
+  "good/buildkit/Dockerfile": ["DF003", "DF022"],
+  "good/arg/Dockerfile": ["DF003", "DF022"],
+  "good/heredoc/Dockerfile": ["DF003", "DF022"],
+  "bad/root/Dockerfile": ["DF002", "DF003", "DF006", "DF012", "DF013", "DF014", "DF018", "DF019", "DF020", "DF022"],
+  "bad/secrets/Dockerfile": ["DF003", "DF007", "DF008", "DF022"],
+  "bad/download/Dockerfile": ["DF001", "DF003", "DF009", "DF010", "DF011", "DF022"],
+  "bad/context/Dockerfile": ["DF003", "DF005", "DF017", "DF018", "DF022", "DF023"],
+  "bad/cache/Dockerfile": ["DF003", "DF015", "DF016", "DF022"],
+  "bad/legacy/Dockerfile": ["DF003", "DF006", "DF015", "DF018", "DF021", "DF022", "DF024", "DF025", "DF026"],
+  "edge/unresolved/Dockerfile": ["DF004", "DF022"],
+  "edge/suppression/Dockerfile": [],
+  "edge/invalid-json/Dockerfile": ["PARSE"],
+  "edge/false-positive/Dockerfile": ["DF003", "DF022"]
+}

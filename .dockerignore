@@ -1,0 +1,9 @@
+.git
+.venv
+.test-tmp
+__pycache__
+*.pyc
+*.bak
+.env
+reports
+dist
