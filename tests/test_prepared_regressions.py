@@ -59,3 +59,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_009(self):
         self.assertIn('DF009', self.codes('FROM app:1\nADD git://example.test/repo /src\n'))
 
+    def test_010(self):
+        self.assertIn('DF010', self.codes('FROM app:1\nRUN wget -qO- https://example.test/install | bash\n'))
+
