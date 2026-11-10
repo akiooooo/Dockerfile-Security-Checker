@@ -346,3 +346,7 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertEqual(result["files"], [])
         self.assertEqual(result["summary"], {"error": 0, "warning": 0, "info": 0})
 
+    def test_088(self):
+        reports = [analyze("FROM app:1\nUSER root\n", path) for path in ("one/Dockerfile", "two/Dockerfile")]
+        self.assertEqual(json_report(reports)["summary"]["error"], 2)
+
