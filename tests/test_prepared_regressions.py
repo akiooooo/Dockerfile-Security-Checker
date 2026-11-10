@@ -374,3 +374,6 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertIn("DF006", output)
         self.assertIn("CMD/ENTRYPOINT", output)
 
+    def test_094(self):
+        self.assertEqual(self.cli("FROM app:1\nUSER 1000\n", "--fail-on", "error")[0], 0)
+
