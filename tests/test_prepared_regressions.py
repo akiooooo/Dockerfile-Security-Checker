@@ -53,3 +53,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_007(self):
         self.assertIn('DF007', self.codes('FROM app:1\nENV DATABASE_PASSWORD_FILE=/run/password\n'))
 
+    def test_008(self):
+        self.assertIn('DF008', self.codes('FROM app:1\nCOPY --chown=1000:1000 keys/id_ed25519 /keys/\n'))
+
