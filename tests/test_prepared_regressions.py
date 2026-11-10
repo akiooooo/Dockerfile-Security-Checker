@@ -236,3 +236,8 @@ class PreparedRegressionTests(unittest.TestCase):
         with self.assertRaises(ParseError):
             parse('FROM app:1\n# dockercheck: ignore=DF003 reason=\nRUN true\n')
 
+    def test_065(self):
+        document = parse("FROM app:1\nRUN echo one \\\n    && echo two\n")
+        instruction = document.instructions[1]
+        self.assertEqual((instruction.line, instruction.end_line), (2, 3))
+
