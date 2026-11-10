@@ -341,3 +341,8 @@ class PreparedRegressionTests(unittest.TestCase):
         apply_fix(self.path, source)
         self.assertFalse((self.context/"NEVER_EXECUTE_THIS").exists())
 
+    def test_087(self):
+        result = json_report([])
+        self.assertEqual(result["files"], [])
+        self.assertEqual(result["summary"], {"error": 0, "warning": 0, "info": 0})
+
