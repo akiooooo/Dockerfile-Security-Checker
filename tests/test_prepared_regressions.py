@@ -80,3 +80,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_016(self):
         self.assertIn('DF016', self.codes('FROM app:1\nRUN python3 -m pip install flask\n'))
 
+    def test_017(self):
+        self.assertIn('DF017', self.codes('FROM node:22\nRUN npm install --omit=dev\n'))
+
