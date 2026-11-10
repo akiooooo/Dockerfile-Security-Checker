@@ -279,3 +279,7 @@ class PreparedRegressionTests(unittest.TestCase):
         source = 'FROM app:1\ncmd ["echo", "from lowercase"]\n'
         self.assertEqual(uppercase_keywords(source)[0], source.replace("cmd [", "CMD ["))
 
+    def test_075(self):
+        updated, _ = uppercase_keywords("# from comment\nfrom app:1\n")
+        self.assertTrue(updated.startswith("# from comment\nFROM"))
+
