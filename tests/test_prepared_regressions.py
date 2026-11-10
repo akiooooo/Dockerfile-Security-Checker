@@ -263,3 +263,8 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertFalse(document.instructions[1].heredoc)
         self.assertEqual(len(document.instructions), 3)
 
+    def test_071(self):
+        document = parse("FROM app:1\nRUN <<-EOF\n\techo hello\n\tEOF\n")
+        self.assertTrue(document.instructions[1].heredoc)
+        self.assertEqual(document.instructions[1].end_line, 4)
+
