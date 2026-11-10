@@ -47,3 +47,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_005(self):
         self.assertIn('DF005', self.codes('FROM scratch\nCOPY app /app\n'))
 
+    def test_006(self):
+        self.assertIn('DF006', self.codes('FROM app:1\nUSER 000:1000\n'))
+
