@@ -380,3 +380,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_095(self):
         self.assertEqual(self.cli("FROM app:latest\nUSER 1000\n", "--fail-on", "warning")[0], 1)
 
+    def test_096(self):
+        self.assertEqual(self.cli("FROM app:1\nUSER root\n", "--fail-on", "none")[0], 0)
+
