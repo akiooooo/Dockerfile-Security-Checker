@@ -119,3 +119,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_029(self):
         self.assertNotIn('DF003', self.codes('FROM team/backend:2@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n'))
 
+    def test_030(self):
+        self.assertNotIn('DF004', self.codes('ARG IMAGE=alpine:3.21\nFROM $IMAGE\n'))
+
