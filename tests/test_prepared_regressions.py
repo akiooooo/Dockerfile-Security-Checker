@@ -137,3 +137,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_035(self):
         self.assertNotIn('DF009', self.codes('FROM app:1\nADD archive.tar.gz /app/\n'))
 
+    def test_036(self):
+        self.assertNotIn('DF010', self.codes('FROM app:1\nRUN curl https://example.test/file -o /tmp/file && sha256sum /tmp/file\n'))
+
