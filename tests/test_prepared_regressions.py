@@ -364,3 +364,8 @@ class PreparedRegressionTests(unittest.TestCase):
         report = Report("Dockerfile", [Finding("DF003", "info", "message", "advice", 1)])
         self.assertEqual(sarif_report([report])["runs"][0]["results"][0]["level"], "note")
 
+    def test_092(self):
+        report = analyze("FROM app:1\nUSER root\n")
+        rules = sarif_report([report, report])["runs"][0]["tool"]["driver"]["rules"]
+        self.assertEqual(len(rules), len({r["id"] for r in rules}))
+
