@@ -354,3 +354,9 @@ class PreparedRegressionTests(unittest.TestCase):
         report = analyze("FROM app:1\nUSER 1000\n", ignored={"DF003"})
         self.assertEqual(json_report([report])["files"][0]["suppressed"], 1)
 
+    def test_090(self):
+        report = analyze("FROM app:1\nUSER root\n", "My Project/a#b/Dockerfile")
+        result = sarif_report([report])["runs"][0]["results"][0]
+        uri = result["locations"][0]["physicalLocation"]["artifactLocation"]["uri"]
+        self.assertIn("My%20Project/a%23b", uri)
+
