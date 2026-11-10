@@ -131,3 +131,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_033(self):
         self.assertNotIn('DF007', self.codes('FROM app:1\nENV DESCRIPTION API_TOKEN=example\n'))
 
+    def test_034(self):
+        self.assertNotIn('DF008', self.codes('FROM app:1\nCOPY config/.env.sample /app/\n'))
+
