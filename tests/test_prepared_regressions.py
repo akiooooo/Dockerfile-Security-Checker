@@ -397,3 +397,8 @@ class PreparedRegressionTests(unittest.TestCase):
         report = analyze("FROM app:latest\nRUN chmod 777 /app\nUSER root\n")
         self.assertEqual([(f.line, f.rule) for f in report.findings], sorted((f.line, f.rule) for f in report.findings))
 
+    def test_100(self):
+        source = "FROM app:1 AS build\nUSER root\nFROM app:1 AS Runtime\nUSER 1000\n"
+        self.assertNotIn("DF006", self.codes(source, target="RUNTIME"))
+        self.assertIn("DF006", self.codes(source, target="BUILD"))
+
