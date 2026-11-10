@@ -258,3 +258,8 @@ class PreparedRegressionTests(unittest.TestCase):
         document = parse("FROM --platform=linux/amd64 app:1 AS build\n")
         self.assertEqual((document.stages[0].base, document.stages[0].alias), ("app:1", "build"))
 
+    def test_070(self):
+        document = parse('FROM app:1\nRUN echo "<<EOF"\nUSER 1000\n')
+        self.assertFalse(document.instructions[1].heredoc)
+        self.assertEqual(len(document.instructions), 3)
+
