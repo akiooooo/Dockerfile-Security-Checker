@@ -38,3 +38,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_002(self):
         self.assertIn('DF002', self.codes('FROM ubuntu:LATEST\n'))
 
+    def test_003(self):
+        self.assertIn('DF003', self.codes('FROM registry.local:5000/team/app:2.1\n'))
+
