@@ -56,3 +56,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_008(self):
         self.assertIn('DF008', self.codes('FROM app:1\nCOPY --chown=1000:1000 keys/id_ed25519 /keys/\n'))
 
+    def test_009(self):
+        self.assertIn('DF009', self.codes('FROM app:1\nADD git://example.test/repo /src\n'))
+
