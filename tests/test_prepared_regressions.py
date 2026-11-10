@@ -95,3 +95,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_021(self):
         self.assertIn('DF021', self.codes('FROM app:1\nRUN sudo -u app echo hello\n'))
 
+    def test_022(self):
+        self.assertIn('DF022', self.codes('FROM app:1\nHEALTHCHECK NONE\n'))
+
