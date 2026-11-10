@@ -241,3 +241,7 @@ class PreparedRegressionTests(unittest.TestCase):
         instruction = document.instructions[1]
         self.assertEqual((instruction.line, instruction.end_line), (2, 3))
 
+    def test_066(self):
+        source = "FROM app:1\nRUN echo one " + "\\" + "\n# comment\n && echo two\n"
+        self.assertIn("echo two", parse(source).instructions[1].value)
+
