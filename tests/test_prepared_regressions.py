@@ -89,3 +89,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_019(self):
         self.assertIn('DF019', self.codes('FROM app:1\nWORKDIR ./backend\n'))
 
+    def test_020(self):
+        self.assertIn('DF020', self.codes('FROM app:1\nRUN /bin/chmod -R 777 /srv/uploads\n'))
+
