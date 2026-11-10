@@ -360,3 +360,7 @@ class PreparedRegressionTests(unittest.TestCase):
         uri = result["locations"][0]["physicalLocation"]["artifactLocation"]["uri"]
         self.assertIn("My%20Project/a%23b", uri)
 
+    def test_091(self):
+        report = Report("Dockerfile", [Finding("DF003", "info", "message", "advice", 1)])
+        self.assertEqual(sarif_report([report])["runs"][0]["results"][0]["level"], "note")
+
