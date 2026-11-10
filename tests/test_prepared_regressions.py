@@ -297,3 +297,9 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertEqual(apply_fix(self.path, source), [])
         self.assertFalse(self.path.with_name("Dockerfile.bak").exists())
 
+    def test_079(self):
+        source = "from app:1\nuser 1000\n"
+        self.path.write_bytes(source.encode())
+        self.assertEqual(apply_fix(self.path, source), [1, 2])
+        self.assertEqual(self.path.with_name("Dockerfile.bak").read_bytes(), source.encode())
+
