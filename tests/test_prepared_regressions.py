@@ -323,3 +323,8 @@ class PreparedRegressionTests(unittest.TestCase):
         updated, _ = uppercase_keywords(source)
         self.assertIn('API_TOKEN="DoNotChange"', updated)
 
+    def test_083(self):
+        preview = masked_preview("FROM app:1\nRUN <<EOF\necho SUPER_SECRET\nEOF\n")
+        self.assertNotIn("SUPER_SECRET", preview)
+        self.assertEqual(len(preview.splitlines()), 4)
+
