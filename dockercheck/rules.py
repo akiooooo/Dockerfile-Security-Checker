@@ -75,7 +75,7 @@ def check_instruction(instruction, stage, context, final):
         codes.append("DF025")
     if key in ("ARG", "ENV"):
         parts = tokens(value)
-        names = [part.split("=", 1)[0] for part in parts if "=" in part]
+        names = parts[:1] if key == "ENV" and parts and "=" not in parts[0] else [part.split("=", 1)[0] for part in parts if "=" in part]
         if parts and (key == "ARG" or not names):
             names.append(parts[0].split("=", 1)[0])
         if any(secret_name(name) for name in names):
