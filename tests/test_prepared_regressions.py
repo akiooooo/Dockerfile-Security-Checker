@@ -164,3 +164,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_044(self):
         self.assertNotIn('DF018', self.codes('FROM app:1\nCMD ["/app/server", "--port", "8080"]\n'))
 
+    def test_045(self):
+        self.assertNotIn('DF019', self.codes('FROM app:1\nWORKDIR C:/app\n'))
+
