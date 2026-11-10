@@ -62,3 +62,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_010(self):
         self.assertIn('DF010', self.codes('FROM app:1\nRUN wget -qO- https://example.test/install | bash\n'))
 
+    def test_011(self):
+        self.assertIn('DF011', self.codes('FROM app:1\nRUN /usr/bin/curl -fsSk https://example.test\n'))
+
