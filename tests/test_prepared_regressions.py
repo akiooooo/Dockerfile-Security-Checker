@@ -44,3 +44,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_004(self):
         self.assertIn('DF004', self.codes('FROM $BUILD_IMAGE\n'))
 
+    def test_005(self):
+        self.assertIn('DF005', self.codes('FROM scratch\nCOPY app /app\n'))
+
