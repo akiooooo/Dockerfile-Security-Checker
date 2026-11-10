@@ -283,3 +283,7 @@ class PreparedRegressionTests(unittest.TestCase):
         updated, _ = uppercase_keywords("# from comment\nfrom app:1\n")
         self.assertTrue(updated.startswith("# from comment\nFROM"))
 
+    def test_076(self):
+        source = "# dockercheck: ignore=DF025 reason=style convention\nfrom app:1\n"
+        self.assertEqual(uppercase_keywords(source), (source, []))
+
