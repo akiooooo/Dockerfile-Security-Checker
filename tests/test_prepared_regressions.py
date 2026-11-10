@@ -254,3 +254,7 @@ class PreparedRegressionTests(unittest.TestCase):
         self.assertIs(document.stages[1].parent, document.stages[0])
         self.assertEqual(document.stages[1].effective("USER").value, "1000")
 
+    def test_069(self):
+        document = parse("FROM --platform=linux/amd64 app:1 AS build\n")
+        self.assertEqual((document.stages[0].base, document.stages[0].alias), ("app:1", "build"))
+
