@@ -173,3 +173,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_047(self):
         self.assertNotIn('DF021', self.codes('FROM app:1\nRUN echo "documentation: sudo -u app"\n'))
 
+    def test_048(self):
+        self.assertNotIn('DF022', self.codes('FROM app:1\nHEALTHCHECK --interval=30s CMD ["/app/health"]\n'))
+
