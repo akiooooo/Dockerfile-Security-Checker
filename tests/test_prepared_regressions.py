@@ -185,3 +185,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_051(self):
         self.assertNotIn('DF025', self.codes('FROM app:1\nRUN echo "from alpine"\n'))
 
+    def test_052(self):
+        self.assertNotIn('DF026', self.codes('FROM app:1\nLABEL description="ONBUILD disabled"\n'))
+
