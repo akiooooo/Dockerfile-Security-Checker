@@ -158,3 +158,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_042(self):
         self.assertNotIn('DF016', self.codes('FROM app:1\nENV PIP_NO_CACHE_DIR=true\nRUN pip3 install flask\n'))
 
+    def test_043(self):
+        self.assertNotIn('DF017', self.codes('FROM node:22\nRUN npm ci --omit=dev\n'))
+
