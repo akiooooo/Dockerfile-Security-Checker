@@ -318,3 +318,8 @@ class PreparedRegressionTests(unittest.TestCase):
             apply_fix(self.path, source)
         self.assertEqual(backup.read_text(encoding="utf-8"), "valuable")
 
+    def test_082(self):
+        source = 'from app:1\nenv API_TOKEN="DoNotChange"\n'
+        updated, _ = uppercase_keywords(source)
+        self.assertIn('API_TOKEN="DoNotChange"', updated)
+
