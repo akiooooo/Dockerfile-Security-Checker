@@ -65,3 +65,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_011(self):
         self.assertIn('DF011', self.codes('FROM app:1\nRUN /usr/bin/curl -fsSk https://example.test\n'))
 
+    def test_012(self):
+        self.assertIn('DF012', self.codes('FROM app:1\nRUN sh -c "apt-get update"\n'))
+
