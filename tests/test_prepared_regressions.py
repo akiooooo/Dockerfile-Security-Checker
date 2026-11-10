@@ -216,3 +216,7 @@ class PreparedRegressionTests(unittest.TestCase):
         with self.assertRaises(ParseError):
             parse('FROM app:1\nCMD []\n')
 
+    def test_060(self):
+        with self.assertRaises(ParseError):
+            parse('FROM app:1\nRUN ["echo", 5]\n')
+
