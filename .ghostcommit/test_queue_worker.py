@@ -53,7 +53,7 @@ class WorkerTests(unittest.TestCase):
         self.remote_before = self.git('ls-remote', 'origin', 'refs/heads/main')
 
     def tearDown(self):
-        # Git делает object-файлы read-only на Windows.
+        # Git делает object-файлы read-only на Windows
         for path in self.root.rglob('*'):
             if path.is_file():
                 path.chmod(0o600)

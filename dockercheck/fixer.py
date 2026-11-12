@@ -29,7 +29,7 @@ def apply_fix(path, source):
     if original.decode("utf-8-sig") != source:
         raise ValueError("Файл изменился после чтения; повторите проверку")
     backup = path.with_name(path.name + ".bak")
-    # Не перезаписываем старую резервную копию при повторном запуске.
+    # Не перезаписываем старую резервную копию при повторном запуске
     with backup.open("xb") as stream:
         stream.write(original)
     bom = original.startswith(b"\xef\xbb\xbf")

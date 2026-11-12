@@ -16,17 +16,17 @@ def main(argv=None):
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8")
-    parser = argparse.ArgumentParser(description="Dockercheck — проверка Dockerfile без Docker и внешних зависимостей")
+    parser = argparse.ArgumentParser(description="Проверка Dockerfile без запуска Docker")
     parser.add_argument("paths", nargs="*", help="Dockerfile или каталоги для рекурсивного поиска")
     parser.add_argument("--format", choices=("text", "json", "sarif"), default="text")
     parser.add_argument("--output", type=Path, help="Записать отчёт в файл")
     parser.add_argument("--fail-on", choices=("error", "warning", "info", "none"), default="warning")
     parser.add_argument("--ignore", default="", help="Исключить правила, например DF003,DF022")
     parser.add_argument("--context", type=Path, help="Корень build context для проверки .dockerignore")
-    parser.add_argument("--target", help="Считать указанную стадию финальной; все стадии по-прежнему анализируются")
+    parser.add_argument("--target", help="Выбрать финальную стадию")
     actions = parser.add_mutually_exclusive_group()
-    actions.add_argument("--fix", action="store_true", help="Исправить регистр ключевых слов; создать .bak")
-    actions.add_argument("--dry-run", action="store_true", help="Показать diff безопасных исправлений, не менять файл")
+    actions.add_argument("--fix", action="store_true", help="Исправить регистр команд и сохранить копию .bak")
+    actions.add_argument("--dry-run", action="store_true", help="Показать, что изменит --fix")
     parser.add_argument("--list-rules", action="store_true")
     parser.add_argument("--version", action="version", version=__version__)
     args = parser.parse_args(argv)
@@ -39,21 +39,30 @@ def main(argv=None):
     if args.fix and "DF025" in ignored:
         parser.error("--fix несовместим с исключением DF025")
     paths = []
+    skipped_dirs = {".git", ".venv", "node_modules", ".tools"}
     for raw in args.paths or ["Dockerfile"]:
         path = Path(raw)
         if not path.exists():
             parser.error(f"Путь не найден: {path}")
-        if path.is_dir():
-            paths.extend(p for p in path.rglob("*") if p.is_file()
-                and (p.name == "Dockerfile" or p.name.startswith("Dockerfile.") or p.name.endswith(".Dockerfile"))
-                and not p.name.endswith(".bak") and not {".git", ".venv", "node_modules", ".tools"}.intersection(p.parts))
-        else:
+        if not path.is_dir():
             paths.append(path)
+            continue
+        for candidate in path.rglob("*"):
+            name = candidate.name
+            if name.endswith(".bak") or skipped_dirs.intersection(candidate.parts):
+                continue
+            is_dockerfile = name == "Dockerfile" or name.startswith("Dockerfile.") or name.endswith(".Dockerfile")
+            if is_dockerfile and candidate.is_file():
+                paths.append(candidate)
     paths = sorted(set(paths), key=str)
     if not paths:
         parser.error("Dockerfile не найдены")
-    if args.output and any(args.output.resolve() == p.resolve() for p in paths):
-        parser.error("Отчёт не может перезаписывать исходный Dockerfile")
+    if args.output:
+        output_path = args.output.resolve()
+        if any(output_path == path.resolve() for path in paths):
+            parser.error("Отчёт не может перезаписывать исходный Dockerfile")
+        if args.fix and any(output_path == path.with_name(path.name + ".bak").resolve() for path in paths):
+            parser.error("Отчёт не может перезаписывать резервную копию")
     reports = []
     try:
         for path in paths:

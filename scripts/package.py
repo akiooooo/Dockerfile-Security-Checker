@@ -1,4 +1,4 @@
-"""Архив материалов для загрузки в облако, без Git и локальных данных."""
+"""Архив материалов для загрузки в облако, без Git и локальных данных"""
 import hashlib
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile

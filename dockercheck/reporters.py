@@ -35,15 +35,15 @@ def sarif_report(reports):
 def text_report(reports):
     lines = []
     for report in reports:
-        lines.append(f"\n{report.path} · стадий: {report.stages}")
+        lines.append(f"\n{report.path} (стадий: {report.stages})")
         if not report.findings:
-            lines.append("  Нарушений выбранных правил не найдено.")
+            lines.append("  Замечаний нет")
         for item in report.findings:
             stage = f" [стадия {item.stage}]" if item.stage else ""
-            lines.extend([f"  {item.line}: {item.severity.upper():7} {item.rule}{stage} — {item.message}",
-                          f"      → {item.recommendation}"])
+            lines.append(f"  {item.line}: {item.severity.upper():7} {item.rule}{stage}: {item.message}")
+            lines.append(f"      {item.recommendation}")
         if report.suppressed:
-            lines.append(f"  Подавлено исключениями: {report.suppressed}")
+            lines.append(f"  Пропущено по исключениям: {report.suppressed}")
     summary = json_report(reports)["summary"]
     lines.append(f"\nФайлов: {len(reports)} | ошибок: {summary['error']} | предупреждений: {summary['warning']} | рекомендаций: {summary['info']}")
     return "\n".join(lines)

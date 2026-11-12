@@ -1,4 +1,4 @@
-"""Публикует одно заранее проверенное изменение из закреплённой очереди."""
+"""Публикует одно заранее проверенное изменение из закреплённой очереди"""
 
 import argparse
 import hashlib
@@ -92,7 +92,7 @@ def main():
             return
         if delay:
             time.sleep(delay)
-        # Во время ожидания в main могли появиться изменения пользователя.
+        # Во время ожидания в main могли появиться изменения пользователя
         branch = os.environ.get('DEFAULT_BRANCH', 'main')
         if not re.fullmatch(r'[A-Za-z0-9_./-]+', branch):
             raise ValueError('Некорректная целевая ветка')
@@ -135,9 +135,9 @@ def main():
         raise ValueError('Описание коммита не совпадает с очередью')
     git('apply', '--check', '--index', '-', data=patch)
     if args.check_only:
-        summary(f'Следующий шаг проверен: {entry["number"]}/100 — {entry["title"]}')
+        summary(f'Следующий шаг проверен: {entry["number"]}/100 - {entry["title"]}')
         return
-    # Изменения применяются строго по порядку; при ошибке CI сохранит диагностику.
+    # Изменения применяются строго по порядку; при ошибке CI сохранит диагностику
     git('apply', '--index', '-', data=patch)
     result = subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-q'],
         env={**os.environ, 'PYTHONUTF8': '1'}, timeout=300)

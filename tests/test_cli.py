@@ -104,6 +104,16 @@ class CLITests(unittest.TestCase):
             self.run_cli(str(self.path), '--output', str(self.path))
         self.assertEqual(error.exception.code, 2)
 
+    def test_report_cannot_overwrite_backup_during_fix(self):
+        before = b'from app:1\n'
+        self.path.write_bytes(before)
+        backup = self.path.with_name('Dockerfile.bak')
+        with self.assertRaises(SystemExit) as error:
+            self.run_cli(str(self.path), '--fix', '--output', str(backup))
+        self.assertEqual(error.exception.code, 2)
+        self.assertEqual(self.path.read_bytes(), before)
+        self.assertFalse(backup.exists())
+
     def test_unknown_ignore_and_missing_paths(self):
         for args in ([str(self.path), '--ignore', 'DF999'], [str(self.root/'missing')]):
             with self.subTest(args=args), self.assertRaises(SystemExit):

@@ -1,4 +1,4 @@
-name: Tests and Dockerfile policy
+name: Проверки Dockercheck
 on: [push, pull_request]
 permissions:
   contents: read
@@ -29,3 +29,5 @@ jobs:
         with:
           name: dockercheck-sarif
           path: reports/dockercheck.sarif
+      - run: docker build -t dockercheck-test .
+      - run: docker run --rm -v "$PWD/examples/good:/examples:ro" dockercheck-test /examples --fail-on warning

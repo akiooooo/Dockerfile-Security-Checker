@@ -93,7 +93,7 @@ def check_instruction(instruction, stage, context, final):
         if broad and "--from=" not in low and not has_ignore:
             codes.append("DF023")
     if key == "RUN":
-        # Это эвристики shell-кода, а не полноценный анализ Bash AST.
+        # Ищем типовые команды в RUN
         shell = low
         groups = commands(value)
         tools = [(group[0].rsplit("/", 1)[-1].lower(), group[1:]) for group in groups]

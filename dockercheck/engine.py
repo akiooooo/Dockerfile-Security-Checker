@@ -39,7 +39,7 @@ def analyze(source, path="Dockerfile", context=None, ignored=None, target=None):
                 suppressed += 1
                 continue
             results.append(finding(code, item, stage.alias))
-    # Глобальные ARG тоже могут случайно сохранять секреты в метаданных сборки.
+    # В ARG до первой FROM тоже могут быть секреты
     first = document.stages[0].start.line
     for item in document.instructions:
         if item.line >= first:
