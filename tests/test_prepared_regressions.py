@@ -41,3 +41,6 @@ class PreparedRegressionTests(unittest.TestCase):
     def test_003(self):
         self.assertIn('DF003', self.codes('FROM registry.local:5000/team/app:2.1\n'))
 
+    def test_004(self):
+        self.assertIn('DF004', self.codes('FROM $BUILD_IMAGE\n'))
+
